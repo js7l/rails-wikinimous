@@ -5,3 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require 'faker'
+puts 'destroying data'
+Article.destroy_all
+puts 'creating data'
+10.times do
+  article = Article.create(title: Faker::Lorem.sentence, content: Faker::Lorem.paragraph)
+  puts "#{article.title} created"
+  sleep(1)
+end
+
+puts "#{Article.count} articles created"
