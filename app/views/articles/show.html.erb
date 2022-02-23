@@ -1,0 +1,15 @@
+<div class="jumbotron jumbotron-fluid mt-5">
+  <div class="container col-6">
+    <button class="btn btn-secondary ml-auto">
+      <%= link_to "Edit the article", edit_article_path(@article), class: "text-white text-decoration-none" %>
+    </button>
+    <br><br>
+    <h3 class="display-4" class="p-2 bg-light border"><%= @article.title %></h3>
+    <hr class="my-4">
+    <p class="p-2 bg-light border"><%= @article.content %></p>
+    <br>
+    <div class="btn btn-secondary">
+      <%= link_to "Back to Articles", articles_path, class: "text-white text-decoration-none"%>
+    </div>
+  </div>
+</div>

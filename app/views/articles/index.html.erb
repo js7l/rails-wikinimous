@@ -1,0 +1,23 @@
+
+
+<div class="container col-4 mt-5">
+  <h1 class="display-4">ARTICLES LIST</h1>
+  <br>
+  <div class="d-grid gap-3 list-unstyled">
+  <% @articles.each do |article| %>
+      <div class="p-2 bg-light border d-flex justify-content-between">
+      <%= link_to article.title, article, class:"text-decoration-none" %>
+      <%= link_to article_path(article),
+              method: :delete,
+              data: { confirm: "Are you sure?" } do %>
+              <i class="fas fa-trash-alt"></i>
+              <% end %>
+      </div>
+  <% end %>
+  </div>
+  <br>
+  <br>
+  <div class="btn btn-secondary">
+  <%= link_to "Add a new article", new_article_path, class: "text-white text-decoration-none"%>
+  </div>
+</div>
